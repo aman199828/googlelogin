@@ -24,7 +24,7 @@ router.get("/login", async (req, res) => {
 
     const googleUser = await getUserData(oAuthUser.access_token);
     if (googleUser) {
-      return res.redirect(303, `${process.env.FRONTEND_BASEURL}/`);
+      return res.redirect(303, `${process.env.FRONTEND_BASEURL}/home`);
     } else {
       return res.status(401).json({
         status: false,
